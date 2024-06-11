@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+// Bootstrap 5: importing all
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// FontAwesome 6: importing core styling file
+@import "./assets/fontawesome-free-6.5.2-web/scss/fontawesome.scss";
+
+@import "./assets/fontawesome-free-6.5.2-web/scss/solid.scss";
+
+@import "./assets/fontawesome-free-6.5.2-web/scss/brands.scss";
+
+// GoogleFont: importing Roboto font
+@import "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap";
+
+:root {
+  --body-color: #212121;
+  --body-background: #e3fde5;
+  --sidebar-background: #fff;
+  --common-color: #41b73a;
+  --text-color: #616161;
+}
+
+$fontFamily: "Roboto", sans-serif;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-feature-settings: "salt";
+  font: 400 0.875rem/1.6rem $fontFamily;
+  color: var(--body-color);
+  background-color: var(--body-background);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}

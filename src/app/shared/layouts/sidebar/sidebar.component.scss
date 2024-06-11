@@ -1,0 +1,125 @@
+.sidebar {
+  background: var(--sidebar-background);
+  width: 260px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1026;
+  overflow: hidden;
+  box-shadow: none;
+  border-right: none;
+
+  .sidebar__navbar-wrapper {
+    width: 272px;
+    background: inherit;
+
+    .navbar__header {
+      height: auto;
+      display: flex;
+      align-items: center;
+      padding: 4px 24px 4px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 240px;
+        top: 148px;
+        left: 10px;
+        border: 2px solid;
+        border-radius: 3px;
+        border-color: #ddd;
+      }
+
+      a.text-primary {
+        color: rgba(33, 150, 243, 1);
+        text-decoration: none;
+      }
+
+      .logo-lg {
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+      }
+    }
+
+    .navbar__content {
+      position: relative;
+      height: calc(100vh - 80px);
+      padding: 10px 0;
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+
+      .navbar__content-body {
+        > .navbar__content-item {
+          margin: 0 16px;
+
+          .navbar__content-link {
+            padding: 12px 20px;
+            font-size: 20px;
+            font-weight: 500;
+            text-decoration: none;
+            color: var(--text-color);
+            display: block;
+            position: relative;
+
+            .navbar__content-micon {
+              margin-right: 16px;
+              width: 28px;
+              height: 28px;
+              display: inline-block;
+              vertical-align: top;
+              text-align: center;
+
+              i {
+                font-size: 28px;
+              }
+            }
+
+            &::after {
+              content: "";
+              border-radius: 8px;
+              position: absolute;
+              top: 2px;
+              right: 2px;
+              left: 2px;
+              bottom: 2px;
+              opacity: 0.1;
+            }
+          }
+
+          &.active > .navbar__content-link,
+          &:focus > .navbar__content-link,
+          &:hover > .navbar__content-link {
+            color: var(--common-color);
+            font-weight: 500;
+
+            &::after {
+              background: var(--common-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .sidebar {
+    transition: width 0.2s ease;
+  }
+}
+
+@media (max-width: 1024px) {
+  .pc-sidebar {
+    left: -260px;
+    box-shadow: none;
+    top: 0;
+    transition: all 0.2s ease-in-out;
+  }
+}

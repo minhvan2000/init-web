@@ -1,0 +1,134 @@
+a {
+  text-decoration: none;
+}
+
+.dropdown-toggle {
+  white-space: nowrap;
+}
+
+.header {
+  background: var(--sidebar-background);
+  color: var(--text-color);
+  min-height: 80px;
+  position: fixed;
+  left: 260px;
+  right: 0;
+  z-index: 1025;
+  display: flex;
+
+  .header__wrapper {
+    display: flex;
+    padding: 0 20px;
+    flex-grow: 1;
+
+    ul {
+      margin-top: 0;
+      margin-bottom: 0;
+      display: inline-flex;
+
+      &.header__list {
+        padding-left: 0;
+        list-style: none;
+
+        .header__item {
+          min-height: 80px;
+          display: flex;
+          align-items: center;
+          position: relative;
+
+          .header__link {
+            margin: 0 16px;
+            position: relative;
+            font-weight: 500;
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+
+            &.header__link-secondary {
+              background: #daf1d8;
+              color: #41b73a;
+
+              > i {
+                color: #41b73a;
+              }
+
+              &:hover {
+                background: #41b73a;
+                color: #fff;
+
+                > i {
+                  color: #fff;
+                }
+              }
+            }
+            i {
+              font-style: 20px;
+            }
+
+            &.header__link-primary {
+              height: 48px;
+              width: 92px;
+              border-radius: 50px;
+              background: #d3fdea;
+              color: #21f396;
+
+              &:hover {
+                background: #21f396;
+                color: #fff;
+              }
+
+              .header__user-avatar {
+                width: 34px;
+                margin-right: 10px;
+                border-radius: 50%;
+                transition: all 0.08s cubic-bezier(0.37, 0.24, 0.53, 0.99);
+              }
+
+              @media (max-width: 575.98px) {
+                .header__user-avatar {
+                  margin-right: 0;
+                }
+              }
+            }
+          }
+
+          .header__user-profile {
+            .header__link {
+              height: 48px !important;
+              width: 92px !important;
+              border-radius: 50px !important;
+
+              > span > i {
+                font-size: 22px;
+                margin-right: 8px;
+              }
+            }
+          }
+        }
+
+        @media (max-width: 575.98px) {
+          .header__item {
+            position: static;
+            min-height: 60px;
+          }
+        }
+
+        @media (max-width: 1024px) {
+          .header__item.header__mobile-collapse {
+            display: none;
+          }
+        }
+
+        @media (min-width: 1025px) {
+          .header__item.header__sidebar-popup {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
